@@ -1,0 +1,13 @@
+title: Heges dagbok
+description: Heges dagbok.
+plugins:
+  -
+    - '@vuepress/blog'
+    - directories:
+        - id: post
+          dirname: posts
+          path: '/'
+          itemLayout: Post
+          itemPermalink: '/:year/:month/:day/:slug'
+          pagination:
+            lengthPerPage: 5

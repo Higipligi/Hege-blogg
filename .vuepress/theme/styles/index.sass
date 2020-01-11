@@ -1,0 +1,88 @@
+@import url('//fonts.googleapis.com/css?family=Abril+Fatface|Nunito:300,700')
+$family-primary: 'Nunito', sans-serif
+$family-secondary: 'Abril Fatface', sans-serif
+
+@import './reset'
+
+$color-bg: #060715
+$color-fg: #ffffff
+
+$regular: 300
+$bold: 700
+
+$color-primary: darken(#a6e1fa, 15)
+$color-primary-dark: #0e6ba8
+$color-secondary: #e44e4e
+
+*
+	box-sizing: border-box
+
+body
+	font: $regular 1rem/1.5 $family-primary
+	background: $color-bg
+	color: $color-fg
+
+main
+	margin: 0 auto
+	padding: 2rem
+	max-width: 50rem
+
+header
+	margin: 0 0 2rem 0
+	display: flex
+	align-items: center
+	a
+		text-decoration: none
+		color: $color-primary
+		text-transform: uppercase
+		font: $bold 1rem/1 $family-primary
+
+a
+	color: $color-primary-dark
+	&:hover
+		color: $color-primary
+
+strong
+	font-weight: $bold
+
+h1
+	font: 200 1.6rem/1.4 $family-secondary
+	color: $color-secondary
+	margin: 0 0 1rem 0
+
+.post
+	&:not(:last-of-type)
+		&::after
+			content: ''
+			display: block
+			width: 3rem
+			border-bottom: 2px solid $color-primary-dark
+			margin: 2rem 0
+	.date
+		color: $color-secondary
+		font-size: .8rem
+	h1
+		.header-anchor
+			color: $color-secondary
+			text-decoration: none
+			position: absolute
+			transform: translateX(-130%)
+			transition: opacity .1s ease-in
+			opacity: 0
+		&:hover .header-anchor
+			opacity: .5
+	p
+		margin: 1rem 0
+		// &:last-of-type::after
+		// 	content: ' ▪'
+		// 	color: $color-primary-dark
+
+.pagination
+	a
+		text-decoration: none
+		text-transform: uppercase
+		font: $bold .8rem/1 $family-primary
+	.pagination-previous::before
+		content: '← '
+	.pagination-next::after
+		content: ' →'
